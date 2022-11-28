@@ -1,0 +1,215 @@
+.main {
+  background: $yellow;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    background: url("../img/Vector1.svg") left bottom no-repeat,
+    url("../img/Vector2.svg") left top no-repeat,
+    url("../img/Vector3.svg") right top no-repeat,
+    url("../img/Vector4.svg") left top no-repeat,
+    url("../img/Vector5.svg") left bottom no-repeat,
+    url("../img/Vector6.svg") right bottom no-repeat,
+    url("../img/Vector7.svg") right bottom no-repeat,
+    url("../img/Vector8.svg") left top no-repeat;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: $black;
+    z-index: 10;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 636px;
+    margin-bottom: 36px;
+    position: relative;
+
+    background: url("../img/nootris.svg") bottom right 9% no-repeat,
+    url("../img/ginger.svg") bottom 3% right no-repeat;
+
+    &:after {
+      content: url("../img/lemon.svg");
+      display: block;
+      position: absolute;
+      right: 14%;
+      bottom: -34%;
+
+    }
+
+    @media screen and (max-width: 1280px) {
+      padding-left: 3%;
+      min-height: 600px;
+    }
+    @media screen and (max-width: 1024px) {
+
+      background: url("../img/nootris.svg") bottom right 9% no-repeat,
+      url("../img/ginger.svg") bottom 12% right 18% no-repeat;
+      background-size: 13%;
+
+      &:after {
+        content: "";
+        background-image: url("../img/lemon.svg");
+        display: block;
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: -20%;
+        right: 2%;
+
+      }
+
+
+    }
+
+    @media screen and (max-width: 768px) {
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60%;
+      padding: 3%;
+      &:after {
+        content: "";
+        background-image: url("../img/nootris.svg");
+        background-size: contain;
+        bottom: 0;
+        left: 65%;
+        @media screen and (max-width: 480px) {
+          background-image: none;
+          display: none;
+          content: none;
+        }
+
+      }
+    }
+  }
+
+  .main__title-section {
+    margin-top: 36px;
+    line-height: 1.1;
+
+    .main__title {
+      font-size: 144px;
+
+      @media screen and (max-width: 1366px) {
+
+        font-size: 132px;
+
+      }
+
+      @media screen and (max-width: 1280px) {
+        font-size: 103px;
+      }
+
+      @media screen and (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+        font-size: 60px;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 36px;
+      }
+    }
+
+    .main__title-desc {
+      margin-top: 24px;
+      color: #000;
+      font-size: 24px;
+      max-width: 650px;
+      @media screen and (max-width: 1280px) {
+        margin-top: 11px;
+      }
+      @media screen and (max-width: 768px) {
+        margin: 11px auto;
+        font-size: 22px;
+        max-width: 80%;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 480px) {
+        margin: 2px auto;
+        font-size: 17px;
+        line-height: 1.1;
+      }
+
+    }
+  }
+
+  .slogan {
+    color: #000;
+
+    .slogan-title {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1;
+      @media screen and (max-width: 768px) {
+        width: 50%;
+        font-size: 32px;
+      }
+      @media screen and (max-width: 480px) {
+        width: 80%;
+        font-size: 22px;
+      }
+    }
+
+    .slogan-desc {
+      line-height: 1.2;
+      margin-top: 16px;
+      max-width: 350px;
+      @media screen and (max-width: 768px) {
+        width: 50%;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 80%;
+        line-height: 1.1;
+        margin-top: 3px;
+        max-width: 270px;
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      padding-left: 19%;
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 480px) {
+      align-items: center;
+      width: 80%;
+
+      padding-left: 0;
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.btn {
+  display: block;
+  width: 256px;
+  height: 56px;
+  background: $orange;
+  border-radius: 7px;
+  padding: 16px 32px;
+  color: #000;
+
+  &:hover, active {
+    color: $orange;
+    background: #000;
+    border: 1px solid $orange;
+  }
+
+  margin-top: 64px;
+  @media screen and (max-width: 1024px) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 150px;
+    height: 46px;
+    padding: 14px 6px;
+    font-size: 15px;
+  }
+}
