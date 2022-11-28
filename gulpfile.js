@@ -45,7 +45,7 @@ gulpfile.task('css', () => {
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
         })))
-        .pipe(gulpif(env == "prod", groupMediaQueries()))
+        .pipe(groupMediaQueries())
         .pipe(gulpif(env == "prod", cleanUp()))
         //.pipe(concat("main.min.css"))
         .pipe(gulpif(env == "dev", sourceMaps.write()))
@@ -74,6 +74,6 @@ gulpfile.watch(`${SRC_PATH}/scss/**/*.scss`, gulpfile.series('css'));
 gulpfile.watch(`${SRC_PATH}/*.html`, gulpfile.series('copy:html'));
 gulpfile.watch(`${SRC_PATH}/js/*.js`, gulpfile.series('scripts'));
 
-gulpfile.task('default', gulpfile.series("clean", "css", "copy:html", "scripts"));
+gulpfile.task('default', gulpfile.series("clean", "css", "copy:html", "scripts", "server"));
 
-gulpfile.task('build', gulpfile.series("clean", "css", "copy:html", "scripts", "server"));
+gulpfile.task('build', gulpfile.series("clean", "css", "copy:html", "scripts"));

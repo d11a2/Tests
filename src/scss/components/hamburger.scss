@@ -1,0 +1,59 @@
+@use "sass:math";
+
+$plankWidth: 40;
+$plankNewWidth: 33;
+$hamburgerHeight: math.div(math.sqrt(2 * math.pow($plankNewWidth, 2)), 2) + 0px;
+
+.hamburger {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    z-index: 250;
+    cursor: pointer;
+  }
+
+  &__plank {
+    width: $plankWidth + 0px;
+    height: 4px;
+    display: block;
+    border-radius: 2px;
+    background: $yellow;
+    margin: 4px;
+
+    z-index: 250;
+  }
+
+  &.hamburger--visible {
+
+    .hamburger__plank:last-child {
+      display: none;
+    }
+
+    height: $hamburgerHeight;
+    width: $hamburgerHeight;
+    position: relative;
+
+    .hamburger__plank {
+      margin: 0;
+      transition: transform .3s, width 2s, background-color 2s;
+    }
+
+    .hamburger__plank:nth-child(odd) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $orange;
+      transform-origin: left;
+      transform: rotate(45deg);
+    }
+
+    .hamburger__plank:nth-child(even) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: right;
+      transform: rotate(-45deg);
+    }
+  }
+
+}
