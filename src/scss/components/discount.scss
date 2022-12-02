@@ -221,6 +221,13 @@
           top: -105px;
           left: 107px;
         }
+         @media screen and (max-width: 768px) {
+          width: 112px;
+          height: 320px;
+          transform: rotate(-90deg);
+          top: -105px;
+          left: 13px;
+        }
         @media screen and (max-width: 480px) {
           width: 62px;
           height: 230px;
